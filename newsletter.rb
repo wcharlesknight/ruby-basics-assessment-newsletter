@@ -3,7 +3,6 @@ require 'pry'
 #########################
 # Data for the newsletter
 #########################
-require "pry"
 CAMPUS = {
   "name": "DC",
   "address": "1440 G St NW, Washington, DC 20005",
@@ -26,14 +25,17 @@ ARTICLES = [
 #########################
 # Methods to generate the newsletter
 #########################
+binding.pry
 
-def calculate_recipients
-  # Using the SUBSCRIBERS and UNSUBSCRIBED arrays,
-  # write a method that will return an array of only the subscribers who haven't unsubscribed
+def calculate_recipients(sub_list,un_list)
+  new_subscriber_list = []
+  sub_list.each do |names|
+    
+  end
 end
 
-def first_n_articles(number_of_articles
-  ARTICLES.first(number_of_articles)
+def first_n_articles(number_of_articles)
+  #ARTICLES.first(number_of_articles)
 end
 
 def print_recipients
@@ -54,11 +56,12 @@ def print_many_articles(articles)
 end
 
 def format_campus_location(campus)
-  "Flatiron #{campus["name"]}"
+  "Flatiron #{campus[:name]}"
 end
 
 def format_subject
-  puts "#{format_campus_location(CAMPUS)} Newsletter - #{DATE}\n\n"
+   puts "#{format_campus_location(CAMPUS)} Newsletter - #{DATE}\n\n"
+ 
 end
 
 def format_footer(campus)
@@ -80,7 +83,6 @@ def print_newsletter(number)
   print_many_articles(articles)
   puts format_footer(CAMPUS)
 
-  end
 end
 
 def run
