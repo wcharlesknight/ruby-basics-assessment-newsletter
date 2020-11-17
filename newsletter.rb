@@ -25,29 +25,29 @@ ARTICLES = [
 #########################
 # Methods to generate the newsletter
 #########################
-binding.pry
 
 def calculate_recipients(sub_list,un_list)
-  new_subscriber_list = []
-  sub_list.each do |names|
-    
-  end
-end
+  c = sub_list.reject{ |names| un_list.include? names}
+  puts c 
+end 
+
+
 
 def first_n_articles(number_of_articles)
   #ARTICLES.first(number_of_articles)
 end
 
 def print_recipients
-  # Write a method that uses the output of calculate_recipients
-  # and returns a list of emails separated by commas
-  # Ex) "abc@email.com, def@email.com, ghi@email.com"
-end
+  list = calculate_recipients(SUBSCRIBERS,UNSUBSCRIBED)
+  lista = list.to_a
+  puts lista.join(",")
+ end 
 
 def print_one_article(article)
-  # Write a method that will take an article hash
-  # and print the title, author and text as a formatted string
-  # See the README/sample output for examples
+    puts article["title"]
+    puts "by #{article["author"]}"
+    puts article["text"]
+  end 
 end
 
 def print_many_articles(articles)
