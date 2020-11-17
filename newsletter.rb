@@ -44,9 +44,9 @@ def print_recipients
  end 
 
 def print_one_article(article)
-    puts article["title"]
-    puts "by #{article["author"]}"
-    puts article["text"]
+    puts article[:title]
+    puts "by #{article[:author]}"
+    puts article[:text]
   end 
 end
 
